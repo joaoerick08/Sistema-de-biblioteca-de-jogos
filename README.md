@@ -9,9 +9,10 @@ API REST para gerenciamento de biblioteca de jogos, estúdios e categorias desen
 - Java 21 | Spring Boot 4.1.1 (Web, Data JPA) | H2 Database | Lombok
 
 ##  Como Executar
-1. Clone o repositório ou abra o projeto no IntelliJ.
+1. Clone o repositório ou abra o projeto em uma IDE.
 2. Execute a classe `SisbibliotecadejogosApplication.java`.
 3. Console do H2: `http://localhost:8080/h2-console` (JDBC URL: `jdbc:h2:mem:bibliotecadb`, User: `sa`).
+4. para dar post em jogos, primeiro adicione um estudio e uma categoria e passe a id nele para o jogo
 
 ## 📑 Endpoints Principais
 
