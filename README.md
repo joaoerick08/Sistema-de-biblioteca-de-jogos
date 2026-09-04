@@ -14,7 +14,7 @@ API REST para gerenciamento de biblioteca de jogos, estúdios e categorias desen
 3. Console do H2: `http://localhost:8080/h2-console` (JDBC URL: `jdbc:h2:mem:bibliotecadb`, User: `sa`).
 4. para dar post em jogos, primeiro adicione um estudio e uma categoria e passe a id nele para o jogo
 
-## 📑 Endpoints Principais
+## Endpoints Principais
 
 ### Estúdios (`/estudios`)
 - `GET /estudios` - Listar todos
