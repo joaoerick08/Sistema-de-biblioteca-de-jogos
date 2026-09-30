@@ -1,0 +1,8 @@
+<app-formulario-jogo
+  [jogoParaEditar]="jogoEmEdicao"
+  (jogoSalvo)="jogoEmEdicao = undefined; lista.carregar()">
+</app-formulario-jogo>
+
+<app-lista-jogos #lista (jogoSelecionado)="jogoEmEdicao = $event"></app-lista-jogos>
+
+<router-outlet />

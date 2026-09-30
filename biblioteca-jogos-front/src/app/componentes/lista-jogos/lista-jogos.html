@@ -1,0 +1,25 @@
+<div class="biblioteca">
+  <h1> Biblioteca de Jogos</h1>
+
+  <div class="prateleira" *ngFor="let grupo of estantes()">
+    <p class="nome-estudio">{{ grupo.nome }}</p>
+    <div class="estante">
+      <div class="livro" *ngFor="let jogo of grupo.jogos">
+        <div class="capa" [style.background]="jogo.corLombada || '#7a3b2e'">
+          <div class="lombada">{{ jogo.nome }}</div>
+        </div>
+        <div class="ficha">
+          <strong>{{ jogo.nome }}</strong>
+          <span>{{ jogo.anoLancamento }} · nota {{ jogo.pontuacao }}</span>
+          <span>Minha avaliação: {{ jogo.avaliacaoPessoal }}</span>
+          <div class="acoes">
+            <button (click)="editar(jogo)">Editar</button>
+            <button class="apagar" (click)="deletar(jogo.id)">Apagar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p *ngIf="jogos().length === 0">Nenhum jogo cadastrado ainda.</p>
+</div>

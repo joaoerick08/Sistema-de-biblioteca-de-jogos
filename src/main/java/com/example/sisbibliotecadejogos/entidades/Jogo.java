@@ -13,24 +13,25 @@ import java.util.List;
 @NoArgsConstructor
 public class Jogo {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    private String nome;
-    private Integer anoLancamento;
-    private Double pontuacao;
-    private String avaliacaoPessoal;
+  private String nome;
+  private Integer anoLancamento;
+  private Double pontuacao;
+  private String avaliacaoPessoal;
+  private String corLombada;
 
-    @ManyToOne
-    @JoinColumn(name = "estudio_id")
-    private Estudio estudio;
+  @ManyToOne
+  @JoinColumn(name = "estudio_id")
+  private Estudio estudio;
 
-    @ManyToMany
-    @JoinTable(
-            name = "jogo_categoria",
-            joinColumns = @JoinColumn(name = "jogo_id"),
-            inverseJoinColumns = @JoinColumn(name = "categoria_id")
-    )
-    private List<Categorias> categorias;
+  @ManyToMany
+  @JoinTable(
+    name = "jogo_categoria",
+    joinColumns = @JoinColumn(name = "jogo_id"),
+    inverseJoinColumns = @JoinColumn(name = "categoria_id")
+  )
+  private List<Categorias> categorias;
 }

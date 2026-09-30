@@ -1,0 +1,47 @@
+<div class="formulario">
+  <h2>{{ jogo.id ? 'Editar Jogo' : 'Novo Jogo' }}</h2>
+  <form (ngSubmit)="salvar()">
+    <div class="campo">
+      <label>Nome</label>
+      <input [(ngModel)]="jogo.nome" name="nome" required>
+    </div>
+
+    <div class="campo">
+      <label>Ano</label>
+      <input type="number" [(ngModel)]="jogo.anoLancamento" name="ano" required>
+    </div>
+
+    <div class="campo">
+      <label>Pontuação</label>
+      <input type="number" [(ngModel)]="jogo.pontuacao" name="pontuacao" required>
+    </div>
+
+    <div class="campo">
+      <label>Avaliação pessoal</label>
+      <input type="number" [(ngModel)]="jogo.avaliacaoPessoal" name="avaliacao" required>
+    </div>
+
+    <div class="campo">
+      <label>Cor da lombada</label>
+      <input type="color" [(ngModel)]="jogo.corLombada" name="cor">
+    </div>
+
+    <div class="campo estudio">
+      <label>Estúdio</label>
+      <select [(ngModel)]="jogo.estudio.id" name="estudio" required>
+        <option *ngFor="let e of estudios()" [value]="e.id">{{ e.nome }}</option>
+      </select>
+      <button type="button" class="link" (click)="mostrarNovoEstudio = !mostrarNovoEstudio">
+        + novo estúdio
+      </button>
+    </div>
+
+    <div class="novo-estudio" *ngIf="mostrarNovoEstudio">
+      <input placeholder="Nome do estúdio" [(ngModel)]="novoEstudio.nome" name="novoEstudioNome">
+      <input placeholder="País" [(ngModel)]="novoEstudio.pais" name="novoEstudioPais">
+      <button type="button" (click)="salvarNovoEstudio()">Adicionar</button>
+    </div>
+
+    <button type="submit" class="salvar">Salvar</button>
+  </form>
+</div>

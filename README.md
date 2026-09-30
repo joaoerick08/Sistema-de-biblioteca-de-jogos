@@ -1,20 +1,32 @@
 # Sistema de Biblioteca de Jogos (sisbibliotecadejogos)
 
-API REST para gerenciamento de biblioteca de jogos, estúdios e categorias desenvolvida em Java com Spring Boot e H2.
+API REST para gerenciamento de biblioteca de jogos e estúdios desenvolvida em Java com Spring Boot e H2.
 
 - João Erick Moura da silva - 2525050008
 
 
-##  Tecnologias
-- Java 21 | Spring Boot 4.1.1 (Web, Data JPA) | H2 Database | Lombok
+## Tecnologias
+- Backend: Java 21 | Spring Boot 4.1.1 (Web, Data JPA) | H2 Database | Lombok
+- Front-end: Angular
 
 ##  Como Executar
+
+### Backend (API)
 1. Clone o repositório ou abra o projeto em uma IDE.
 2. Execute a classe `SisbibliotecadejogosApplication.java`.
-3. Console do H2: `http://localhost:8080/h2-console` (JDBC URL: `jdbc:h2:mem:bibliotecadb`, User: `sa`).
-4. para dar post em jogos, primeiro adicione um estudio e uma categoria e passe a id nele para o jogo
+3. A API sobe em `http://localhost:8080`.
+4. Console do H2: `http://localhost:8080/h2-console` (JDBC URL: `jdbc:h2:mem:bibliotecadb`, User: `sa`).
+5. O banco já vem com um estúdio e uma categoria de exemplo pré-cadastrados automaticamente (via `data.sql`), então já dá pra criar jogos direto sem precisar cadastrar nada na mão antes.
 
-## 📑 Endpoints Principais
+### Front-end (Angular)
+1. Entre na pasta do front: `cd biblioteca-jogos-front`
+2. Instale as dependências: `npm install`
+3. Suba o servidor de desenvolvimento: `ng serve`
+4. Acesse `http://localhost:4200` no navegador.
+
+> ⚠️ O backend precisa estar rodando (passo acima) para o front conseguir carregar e salvar os jogos.
+
+## Endpoints Principais
 
 ### Estúdios (`/estudios`)
 - `GET /estudios` - Listar todos

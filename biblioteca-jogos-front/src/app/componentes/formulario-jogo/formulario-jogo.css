@@ -1,0 +1,108 @@
+.formulario {
+  background: #1c120b;
+  color: #f0e6d2;
+  padding: 1rem 1.5rem 1.25rem;
+  font-family: 'Georgia', serif;
+  border-bottom: 3px solid #3a281c;
+}
+
+.formulario h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  color: #c9a876;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.campo label {
+  font-size: 11px;
+  color: #a98e6b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.campo input,
+.campo select {
+  background: #2b1d14;
+  border: 1px solid #4a3624;
+  color: #f0e6d2;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.campo input[type="color"] {
+  padding: 2px;
+  width: 44px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.campo.estudio {
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: #c9a876;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 6px 0;
+}
+
+.novo-estudio {
+  display: flex;
+  gap: 8px;
+  background: #2b1d14;
+  padding: 8px;
+  border-radius: 4px;
+  align-items: center;
+}
+
+.novo-estudio input {
+  background: #1c120b;
+  border: 1px solid #4a3624;
+  color: #f0e6d2;
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+
+button.salvar {
+  background: #7a3b2e;
+  color: #f0e6d2;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button.salvar:hover {
+  background: #5a2a20;
+}
+
+.novo-estudio button {
+  background: #7a3b2e;
+  color: #f0e6d2;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
