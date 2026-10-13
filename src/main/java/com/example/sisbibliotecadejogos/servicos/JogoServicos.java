@@ -18,7 +18,7 @@ public class JogoServicos {
         return jogoRepository.findAll();
     }
 
-    public Optional<Jogo> buscarPorId(Long id) {
+    public Optional<Jogo> buscarPorId(String id) {
         return jogoRepository.findById(id);
     }
 
@@ -26,19 +26,20 @@ public class JogoServicos {
         return jogoRepository.save(jogo);
     }
 
-    public Jogo atualizar(Long id, Jogo jogoAtualizado) {
+    public Jogo atualizar(String id, Jogo jogoAtualizado) {
         return jogoRepository.findById(id).map(jogo -> {
             jogo.setNome(jogoAtualizado.getNome());
             jogo.setAnoLancamento(jogoAtualizado.getAnoLancamento());
             jogo.setPontuacao(jogoAtualizado.getPontuacao());
             jogo.setAvaliacaoPessoal(jogoAtualizado.getAvaliacaoPessoal());
+            jogo.setCorLombada(jogoAtualizado.getCorLombada());
             jogo.setEstudio(jogoAtualizado.getEstudio());
             jogo.setCategorias(jogoAtualizado.getCategorias());
             return jogoRepository.save(jogo);
         }).orElseThrow(() -> new RuntimeException("Jogo não encontrado com o ID: " + id));
     }
 
-    public void deletar(Long id) {
+    public void deletar(String id) {
         jogoRepository.deleteById(id);
     }
 }

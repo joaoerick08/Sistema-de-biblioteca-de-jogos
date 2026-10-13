@@ -23,7 +23,7 @@ public class CategoriasControlador {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Categorias> buscarPorId(@PathVariable Long id) {
+    public ResponseEntity<Categorias> buscarPorId(@PathVariable String id) {
         return categoriaServicos.buscarPorId(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
@@ -36,7 +36,7 @@ public class CategoriasControlador {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Categorias> atualizar(@PathVariable Long id, @RequestBody Categorias categoria) {
+    public ResponseEntity<Categorias> atualizar(@PathVariable String id, @RequestBody Categorias categoria) {
         try {
             Categorias categoriaAtualizada = categoriaServicos.atualizar(id, categoria);
             return ResponseEntity.ok(categoriaAtualizada);
@@ -46,7 +46,7 @@ public class CategoriasControlador {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+    public ResponseEntity<Void> deletar(@PathVariable String id) {
         categoriaServicos.deletar(id);
         return ResponseEntity.noContent().build();
     }

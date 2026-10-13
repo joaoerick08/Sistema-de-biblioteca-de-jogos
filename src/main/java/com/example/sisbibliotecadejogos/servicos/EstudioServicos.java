@@ -17,7 +17,7 @@ public class EstudioServicos {
         return estudioRepositorio.findAll();
     }
 
-    public Estudio buscarPorId(Long id) {
+    public Estudio buscarPorId(String id) {
         return estudioRepositorio.findById(id).orElse(null);
     }
 
@@ -25,7 +25,7 @@ public class EstudioServicos {
         return estudioRepositorio.save(estudio);
     }
 
-    public Estudio atualizar(Long id, Estudio estudioAtualizado) {
+    public Estudio atualizar(String id, Estudio estudioAtualizado) {
         Estudio estudio = estudioRepositorio.findById(id).orElse(null);
         if (estudio != null) {
             estudio.setNome(estudioAtualizado.getNome());
@@ -35,7 +35,7 @@ public class EstudioServicos {
         return null;
     }
 
-    public void deletar(Long id) {
+    public void deletar(String id) {
         estudioRepositorio.deleteById(id);
     }
 }

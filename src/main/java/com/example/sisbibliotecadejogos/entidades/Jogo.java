@@ -1,37 +1,32 @@
 package com.example.sisbibliotecadejogos.entidades;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Entity
+@Document(collection = "jogos")
 @Getter
 @Setter
 @NoArgsConstructor
 public class Jogo {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+    @Id
+    private String id;
 
-  private String nome;
-  private Integer anoLancamento;
-  private Double pontuacao;
-  private String avaliacaoPessoal;
-  private String corLombada;
+    private String nome;
+    private Integer anoLancamento;
+    private Double pontuacao;
+    private String avaliacaoPessoal;
+    private String corLombada;
 
-  @ManyToOne
-  @JoinColumn(name = "estudio_id")
-  private Estudio estudio;
+    @DBRef
+    private Estudio estudio;
 
-  @ManyToMany
-  @JoinTable(
-    name = "jogo_categoria",
-    joinColumns = @JoinColumn(name = "jogo_id"),
-    inverseJoinColumns = @JoinColumn(name = "categoria_id")
-  )
-  private List<Categorias> categorias;
+    @DBRef
+    private List<Categorias> categorias;
 }

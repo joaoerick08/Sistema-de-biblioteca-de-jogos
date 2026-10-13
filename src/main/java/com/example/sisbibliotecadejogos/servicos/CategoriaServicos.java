@@ -18,7 +18,7 @@ public class CategoriaServicos {
         return CategoriaRepositorio.findAll();
     }
 
-    public Optional<Categorias> buscarPorId(Long id) {
+    public Optional<Categorias> buscarPorId(String id) {
         return CategoriaRepositorio.findById(id);
     }
 
@@ -26,14 +26,14 @@ public class CategoriaServicos {
         return CategoriaRepositorio.save(categorias);
     }
 
-    public Categorias atualizar(Long id, Categorias categoriaAtualizada) {
+    public Categorias atualizar(String id, Categorias categoriaAtualizada) {
         return CategoriaRepositorio.findById(id).map(categoria -> {
             categoria.setNome(categoriaAtualizada.getNome());
             return CategoriaRepositorio.save(categoria);
         }).orElseThrow(() -> new RuntimeException("Categoria não encontrada com o ID: " + id));
     }
 
-    public void deletar(Long id) {
+    public void deletar(String id) {
         CategoriaRepositorio.deleteById(id);
     }
 }

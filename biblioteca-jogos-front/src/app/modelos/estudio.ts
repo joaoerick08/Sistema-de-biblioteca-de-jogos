@@ -1,5 +1,5 @@
 export interface Estudio {
-  id?: number;
+  id?: string;
   nome: string;
   pais?: string;
 }

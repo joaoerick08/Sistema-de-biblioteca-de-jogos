@@ -9,8 +9,8 @@ export class JogoService {
   constructor(private http: HttpClient) {}
 
   listarTodos(): Observable<Jogo[]> { return this.http.get<Jogo[]>(this.url); }
-  buscarPorId(id: number): Observable<Jogo> { return this.http.get<Jogo>(`${this.url}/${id}`); }
+  buscarPorId(id: string): Observable<Jogo> { return this.http.get<Jogo>(`${this.url}/${id}`); }
   criar(jogo: Jogo): Observable<Jogo> { return this.http.post<Jogo>(this.url, jogo); }
-  atualizar(id: number, jogo: Jogo): Observable<Jogo> { return this.http.put<Jogo>(`${this.url}/${id}`, jogo); }
-  deletar(id: number): Observable<void> { return this.http.delete<void>(`${this.url}/${id}`); }
+  atualizar(id: string, jogo: Jogo): Observable<Jogo> { return this.http.put<Jogo>(`${this.url}/${id}`, jogo); }
+  deletar(id: string): Observable<void> { return this.http.delete<void>(`${this.url}/${id}`); }
 }

@@ -21,7 +21,7 @@ public class EstudioControlador {
     }
 
     @GetMapping("/{id}")
-    public Estudio buscarPorId(@PathVariable Long id) {
+    public Estudio buscarPorId(@PathVariable String id) {
         return estudioServicos.buscarPorId(id);
     }
 
@@ -31,12 +31,12 @@ public class EstudioControlador {
     }
 
     @PutMapping("/{id}")
-    public Estudio atualizar(@PathVariable Long id, @RequestBody Estudio estudio) {
+    public Estudio atualizar(@PathVariable String id, @RequestBody Estudio estudio) {
         return estudioServicos.atualizar(id, estudio);
     }
 
     @DeleteMapping("/{id}")
-    public void deletar(@PathVariable Long id) {
+    public void deletar(@PathVariable String id) {
         estudioServicos.deletar(id);
     }
 }

@@ -23,7 +23,7 @@ public class JogoControlador {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Jogo> buscarPorId(@PathVariable Long id) {
+    public ResponseEntity<Jogo> buscarPorId(@PathVariable String id) {
         return jogoServicos.buscarPorId(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
@@ -36,7 +36,7 @@ public class JogoControlador {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Jogo> atualizar(@PathVariable Long id, @RequestBody Jogo jogo) {
+    public ResponseEntity<Jogo> atualizar(@PathVariable String id, @RequestBody Jogo jogo) {
         try {
             Jogo jogoAtualizado = jogoServicos.atualizar(id, jogo);
             return ResponseEntity.ok(jogoAtualizado);
@@ -46,7 +46,7 @@ public class JogoControlador {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+    public ResponseEntity<Void> deletar(@PathVariable String id) {
         jogoServicos.deletar(id);
         return ResponseEntity.noContent().build();
     }

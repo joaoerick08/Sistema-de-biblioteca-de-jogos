@@ -41,7 +41,7 @@ export class ListaJogos implements OnInit {
     this.jogoSelecionado.emit(jogo);
   }
 
-  deletar(id: number | undefined): void {
+  deletar(id: string | undefined): void {
     if (!id) return;
     this.jogoService.deletar(id).subscribe(() => {
       this.zona.run(() => this.jogos.update(atual => atual.filter(j => j.id !== id)));

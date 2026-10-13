@@ -14,7 +14,7 @@ const JOGO_VAZIO: Jogo = {
   pontuacao: 0,
   avaliacaoPessoal: 0,
   corLombada: COR_PADRAO,
-  estudio: { id: 0 },
+  estudio: { id: '' },
   categorias: []
 };
 
