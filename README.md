@@ -12,9 +12,8 @@ API REST para gerenciamento de biblioteca de jogos, estúdios e categorias desen
 ##  Como Executar
 
 ### Pré-requisito: MongoDB
-O backend usa MongoDB. Escolha uma das opções:
-- **Local (padrão):** tenha o MongoDB Community Server rodando em `localhost:27017`. O banco `bibliotecadb` é criado automaticamente.
-- **MongoDB Atlas (nuvem):** defina a variável de ambiente `MONGODB_URI` com a sua string de conexão antes de subir a aplicação.
+O backend usa MongoDB:
+- **Tenha o MongoDB Community Server rodando em `localhost:27017`. O banco `bibliotecadb` é criado automaticamente.
 
 ### Backend (API)
 1. Clone o repositório ou abra o projeto em uma IDE.
